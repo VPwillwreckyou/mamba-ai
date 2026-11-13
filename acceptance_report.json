@@ -1,0 +1,361 @@
+{
+  "passed": 56,
+  "required": 56,
+  "failed": [],
+  "results": [
+    {
+      "name": "B1: app subprocess launches and window appears",
+      "ok": true,
+      "detail": "pids hwnd=[12063398]",
+      "required": true
+    },
+    {
+      "name": "B2: instance-1 screenshot captured",
+      "ok": true,
+      "detail": "C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\acceptance_instance1.png (551812 bytes)",
+      "required": true
+    },
+    {
+      "name": "B3: app stable after 1.5s of UI timers running",
+      "ok": true,
+      "detail": "returncode=None",
+      "required": true
+    },
+    {
+      "name": "B4: instance-1 stderr has no Traceback",
+      "ok": true,
+      "detail": "90+360) on QWidgetWindow/\"DashboardWidgetClassWindow\" on \"SNG007DA3-1\". Resulting geometry: 1200x1520+801+405 (frame: 1222x1576+790+360) margins: 11, 45, 11, 11 minimum size: 648x997 MINMAXINFO(maxSize=POINT(x=0, y=0), maxpos=POINT(x=0, y=0), maxtrack=POINT(x=0, y=0), mintrack=POINT(x=994, y=1552)))",
+      "required": true
+    },
+    {
+      "name": "B5: instance-1 terminated on request",
+      "ok": true,
+      "detail": "rc=1",
+      "required": true
+    },
+    {
+      "name": "B6: instance-1 window gone after termination",
+      "ok": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "B7: restart - second launch shows window",
+      "ok": true,
+      "detail": "hwnd=[13176846]",
+      "required": true
+    },
+    {
+      "name": "B8: restart - screenshot captured",
+      "ok": true,
+      "detail": "(550281 bytes)",
+      "required": true
+    },
+    {
+      "name": "B9: restart instance stable",
+      "ok": true,
+      "detail": "rc=None",
+      "required": true
+    },
+    {
+      "name": "B10: restart stderr has no Traceback",
+      "ok": true,
+      "detail": "90+360) on QWidgetWindow/\"DashboardWidgetClassWindow\" on \"SNG007DA3-1\". Resulting geometry: 1200x1520+801+405 (frame: 1222x1576+790+360) margins: 11, 45, 11, 11 minimum size: 648x997 MINMAXINFO(maxSize=POINT(x=0, y=0), maxpos=POINT(x=0, y=0), maxtrack=POINT(x=0, y=0), mintrack=POINT(x=994, y=1552)))",
+      "required": true
+    },
+    {
+      "name": "B11: restart instance terminated cleanly",
+      "ok": true,
+      "detail": "rc=1",
+      "required": true
+    },
+    {
+      "name": "B12: no orphan MAMBA windows",
+      "ok": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "A1: MambaApp initializes without crash",
+      "ok": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "A2: dashboard window visible on desktop",
+      "ok": true,
+      "detail": "hwnd=[36441076]",
+      "required": true
+    },
+    {
+      "name": "A3: UI screenshot captured for report",
+      "ok": true,
+      "detail": "C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\acceptance_ui.png",
+      "required": true
+    },
+    {
+      "name": "A4: all capability controllers loaded",
+      "ok": true,
+      "detail": "missing=[]",
+      "required": true
+    },
+    {
+      "name": "A5: tool router and task executor wired",
+      "ok": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "A6: typed input produces a MAMBA response in conversation",
+      "ok": true,
+      "detail": "You: hello mamba\nMAMBA: (No GEMINI_API_KEY configured - local mode.) I recorded your message. I remember 31 message(s) this session; last: 'hello mamba'. Set GEMINI_API_KEY for full AI chat.",
+      "required": true
+    },
+    {
+      "name": "A7: statement recorded ('Noted' reply)",
+      "ok": true,
+      "detail": "\nYou: My favorite color is teal\nMAMBA: Noted - your favorite color is teal.",
+      "required": true
+    },
+    {
+      "name": "A8: context recalled across turns (answer contains teal)",
+      "ok": true,
+      "detail": "\nYou: What is my favorite color?\nMAMBA: You told me your favorite color is teal.",
+      "required": true
+    },
+    {
+      "name": "A9: short-term recall of previous message",
+      "ok": true,
+      "detail": "\nYou: what did I just say\nMAMBA: Your previous message was: 'What is my favorite color?'",
+      "required": true
+    },
+    {
+      "name": "A10: open app (notepad) executed and verified",
+      "ok": true,
+      "detail": "reply='\\nYou: open notepad\\nMAMBA: OK - open_application: Open application notepad' windows=[10424350]",
+      "required": true
+    },
+    {
+      "name": "A11: mouse moved to requested coordinates",
+      "ok": true,
+      "detail": "reply='\\nYou: move mouse to 640, 400\\nMAMBA: OK - mouse_move: Move mouse to (640,400)' actual=(640,400)",
+      "required": true
+    },
+    {
+      "name": "A12: keyboard typing entered text into focused field",
+      "ok": true,
+      "detail": "reply='\\nYou: type QZ9\\nMAMBA: OK - keyboard_type: Type text' field='QZ9' qt=False click=False alt=True os_fg=36441076:'MAMBA - Personal AI Assistant'",
+      "required": true
+    },
+    {
+      "name": "A13: screenshot taken via UI command",
+      "ok": true,
+      "detail": "reply='\\nYou: take a screenshot\\nMAMBA: OK - screenshot: path: C:\\\\Users\\\\VahagnPapikyan\\\\Desktop\\\\MAMBA AI\\\\data\\\\screenshots\\\\screenshot_1790710880326.png; bytes: 4'",
+      "required": true
+    },
+    {
+      "name": "A14: screen read (vision) returns real analysis",
+      "ok": true,
+      "detail": "reply=\"\\nYou: read screen\\nMAMBA: OK - screenshot: path: C:\\\\Users\\\\VahagnPapikyan\\\\Desktop\\\\MAMBA AI\\\\data\\\\screenshots\\\\screenshot_1790710880685.png; analysis: {'success': True, 'path': 'C:\\\\\\\\Users\\\\\\\\VahagnPapikyan\\\\\\\\Desktop\\\\\\\\MAMBA AI\\\\\\\\data\\\\\\\\screenshots\\\\\\\\screenshot_1790710880685.png', 'pixels': {'success': True, 'si\"",
+      "required": true
+    },
+    {
+      "name": "A15: OCR layer reports honestly (tesseract not installed)",
+      "ok": true,
+      "detail": "\nYou: read screen\nMAMBA: OK - screenshot: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\screenshots\\screenshot_1790710880685.png; analysis: {'success': True, 'path': 'C:\\\\Users\\\\VahagnPapikyan\\\\Desktop\\\\MAMBA AI\\\\data\\\\screenshots\\\\screenshot_1790710880685.png', 'pixels': {'success': True, 'si",
+      "required": false
+    },
+    {
+      "name": "A16: file created with verified content",
+      "ok": true,
+      "detail": "reply='\\nYou: create file data/acceptance_note.txt with hello acceptance\\nMAMBA: OK - create_file: path: C:\\\\Users\\\\VahagnPapikyan\\\\Desktop\\\\MAMBA AI\\\\data\\\\acceptan'",
+      "required": true
+    },
+    {
+      "name": "A17: file read returns real content",
+      "ok": true,
+      "detail": "\nYou: read file data/acceptance_note.txt\nMAMBA: OK - read_file: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\acceptance_note.txt; content: hello acceptance; bytes: 16",
+      "required": true
+    },
+    {
+      "name": "A18: file edit verified on disk",
+      "ok": true,
+      "detail": "reply='\\nYou: edit file data/acceptance_note.txt replacing hello with goodbye\\nMAMBA: OK - edit_file: path: C:\\\\Users\\\\VahagnPapikyan\\\\Desktop\\\\MAMBA AI\\\\data\\\\accep'",
+      "required": true
+    },
+    {
+      "name": "A19: file append verified on disk",
+      "ok": true,
+      "detail": "reply='\\nYou: append and done to file data/acceptance_note.txt\\nMAMBA: OK - edit_file: path: C:\\\\Users\\\\VahagnPapikyan\\\\Desktop\\\\MAMBA AI\\\\data\\\\acceptance_note.txt'",
+      "required": true
+    },
+    {
+      "name": "A20: directory listing shows created file",
+      "ok": true,
+      "detail": "\nYou: list files in data\nMAMBA: OK - list_files: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data; count: 5; entries: [{'name': 'acceptance_note.txt', 'dir': False, 'size': 26}, {'name': 'auto_step.txt', 'dir': False, 'size': 18}, {'name': 'calc.p",
+      "required": true
+    },
+    {
+      "name": "A21: destructive delete gated (refused without confirmation)",
+      "ok": true,
+      "detail": "error='Action requires explicit user confirmation (CONFIRM level); not executed autonomously'",
+      "required": true
+    },
+    {
+      "name": "A22: terminal returns real command output",
+      "ok": true,
+      "detail": "\nYou: run echo acceptance-terminal-ok\nMAMBA: OK - terminal_execute_safe: command: echo acceptance-terminal-ok; stdout: acceptance-terminal-ok ; returncode: 0",
+      "required": true
+    },
+    {
+      "name": "A23: dangerous command refused by blocklist",
+      "ok": true,
+      "detail": "\nYou: run del /f /q data\\acceptance_note.txt\nMAMBA: FAILED - terminal_execute_safe: Dangerous command refused (requires explicit user confirmation); command: del /f /q data\\acceptance_note.txt; blocked: True",
+      "required": true
+    },
+    {
+      "name": "A24: live web search returns results",
+      "ok": true,
+      "detail": "\nYou: search the web for python programming language\nMAMBA: OK - web_search: results: [{'title': 'Welcome to Python.org', 'url': 'https://www.python.org/', 'snippet': 'Python is a versatile and easy-to-learn language that lets you work quickly and integrate systems more effectively. Learn more about",
+      "required": true
+    },
+    {
+      "name": "A25: coding task - broken file created",
+      "ok": true,
+      "detail": "\nYou: create file data/calc.py with def add(a b):\\n return a + b\\nprint(\"result\", add(2, 3))\nMAMBA: OK - create_file: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\calc.py; bytes: 59",
+      "required": true
+    },
+    {
+      "name": "A26: broken code run fails and error is detected",
+      "ok": true,
+      "detail": "\nYou: run python data/calc.py\nMAMBA: FAILED - terminal_execute_safe: command failed; command: python data/calc.py; stderr: File \"C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\calc.py\", line 1 def add(a b): ^ SyntaxError: invalid syntax ; returncode: 1; failure_markers: ['syntaxerror', 'error:']",
+      "required": true
+    },
+    {
+      "name": "A27: code repaired",
+      "ok": true,
+      "detail": "\nYou: edit file data/calc.py replacing a b with a, b\nMAMBA: OK - edit_file: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\calc.py",
+      "required": true
+    },
+    {
+      "name": "A28: repaired code runs successfully with real output",
+      "ok": true,
+      "detail": "\nYou: run python data/calc.py\nMAMBA: OK - terminal_execute_safe: command: python data/calc.py; stdout: result 5 ; returncode: 0",
+      "required": true
+    },
+    {
+      "name": "A29: test suite runs through terminal and passes",
+      "ok": true,
+      "detail": "\nYou: run python -m pytest tests/test_core_security_unit.py -q\nMAMBA: OK - terminal_execute_safe: command: python -m pytest tests/test_core_security_unit.py -q; stdout: .......... [100%] 10 passed in 0.04s ; returncode: 0",
+      "required": true
+    },
+    {
+      "name": "A30: autonomous multi-step task completed (2 steps)",
+      "ok": true,
+      "detail": "\nYou: create file data/auto_step.txt with autonomous content; then list files in data\nStep 1 (completed): Create file data/auto_step.txt\nStep 2 (completed): List files in data\nMAMBA: Task 'create file data/auto_step.txt with autonomous content; then' completed: 2/2 steps completed.",
+      "required": true
+    },
+    {
+      "name": "A31: generic autonomous pipeline (understand-inspect-plan-act-verify-report)",
+      "ok": true,
+      "detail": "status=completed steps=['Understand the goal', 'Inspect relevant context', 'Plan the approach', 'Execute the actions', 'Verify the result', 'Report the outcome']",
+      "required": true
+    },
+    {
+      "name": "A32: emergency stop blocks all execution",
+      "ok": true,
+      "detail": "\nYou: take a screenshot\nMAMBA: FAILED - screenshot: Blocked by security manager (emergency stop or access revoked)",
+      "required": true
+    },
+    {
+      "name": "A33: operations recover after stop is cleared",
+      "ok": true,
+      "detail": "\nYou: take a screenshot\nMAMBA: OK - screenshot: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\screenshots\\screenshot_1790710887979.png; bytes: 497118",
+      "required": true
+    },
+    {
+      "name": "A34: access revocation blocks actions",
+      "ok": true,
+      "detail": "\nYou: open notepad\nMAMBA: FAILED - open_application: Blocked by security manager (emergency stop or access revoked)",
+      "required": true
+    },
+    {
+      "name": "A35: access restored and actions allowed again",
+      "ok": true,
+      "detail": "\nYou: take a screenshot\nMAMBA: OK - screenshot: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\screenshots\\screenshot_1790710888538.png; bytes: 497265",
+      "required": true
+    },
+    {
+      "name": "A36: phone provider is mock (no real call/text possible)",
+      "ok": true,
+      "detail": "MockPhoneProvider",
+      "required": true
+    },
+    {
+      "name": "A37: phone phrases parsed / non-phone phrase rejected",
+      "ok": true,
+      "detail": "call=call, text_msg=Hello There, neg=None",
+      "required": true
+    },
+    {
+      "name": "A38: message casing preserved in parsed text command",
+      "ok": true,
+      "detail": "message='Hello There'",
+      "required": false
+    },
+    {
+      "name": "A39: phone call through UI used mock provider (no real call)",
+      "ok": true,
+      "detail": "\nYou: call me\nMAMBA: Phone call -> 05***85 via mock provider",
+      "required": true
+    },
+    {
+      "name": "A40: .env carries DEFAULT_PHONE_NUMBER and CALLER_ID",
+      "ok": true,
+      "detail": "",
+      "required": true
+    },
+    {
+      "name": "A41: PhoneManager loaded caller ID and default number",
+      "ok": true,
+      "detail": "caller_id='MAMBA AI' default='055190685'",
+      "required": true
+    },
+    {
+      "name": "A42: close app (notepad) executed and verified gone",
+      "ok": true,
+      "detail": "\nYou: close notepad\nMAMBA: OK - close_application: Close application notepad",
+      "required": true
+    },
+    {
+      "name": "A43: memory growth sane (no leak)",
+      "ok": true,
+      "detail": "growth=149.5 MB (start=58 MB, end=208 MB)",
+      "required": true
+    },
+    {
+      "name": "A44: thread count sane",
+      "ok": true,
+      "detail": "7 -> 16",
+      "required": true
+    },
+    {
+      "name": "A45: conversation log contains the full session",
+      "ok": true,
+      "detail": "5308 chars",
+      "required": true
+    },
+    {
+      "name": "A46: window still responsive after all tests",
+      "ok": true,
+      "detail": "visible",
+      "required": true
+    },
+    {
+      "name": "A47: AI provider status reported honestly",
+      "ok": true,
+      "detail": "ai_provider=False (GEMINI_API_KEY set: False)",
+      "required": false
+    }
+  ]
+}

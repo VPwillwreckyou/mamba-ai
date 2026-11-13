@@ -1,0 +1,26 @@
+{
+  "ai": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "mode": "auto",
+    "ollama_model": "qwen2.5:7b"
+  },
+  "voice": {
+    "enabled": true,
+    "speech_rate": 1.0,
+    "speech_volume": 1.0,
+    "push_to_talk": false,
+    "microphone_index": ""
+  },
+  "language": "en",
+  "wake_words": [
+    "Mamba",
+    "Hey Mamba"
+  ],
+  "autonomy_mode": "maximum",
+  "integrations": {
+    "discord": {
+      "channel_id": ""
+    }
+  }
+}

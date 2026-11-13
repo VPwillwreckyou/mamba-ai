@@ -1,0 +1,113 @@
+
+=== PART B: subprocess lifecycle ===
+[PASS] B1: app subprocess launches and window appears -- pids hwnd=[12063398]
+[PASS] B2: instance-1 screenshot captured -- C:\Users\VahagnPapikyan\Desktop\MAMBA AI\acceptance_instance1.png (551812 bytes)
+[PASS] B3: app stable after 1.5s of UI timers running -- returncode=None
+[PASS] B4: instance-1 stderr has no Traceback -- 90+360) on QWidgetWindow/"DashboardWidgetClassWindow" on "SNG007DA3-1". Resulting geometry: 1200x1520+801+405 (frame: 1222x1576+790+360) margins: 11, 45, 11, 11 minimum size: 648x997 MINMAXINFO(maxSize=POINT(x=0, y=0), maxpos=POINT(x=0, y=0), maxtrack=POINT(x=0, y=0), mintrack=POINT(x=994, y=1552)))
+[PASS] B5: instance-1 terminated on request -- rc=1
+[PASS] B6: instance-1 window gone after termination
+[PASS] B7: restart - second launch shows window -- hwnd=[13176846]
+[PASS] B8: restart - screenshot captured -- (550281 bytes)
+[PASS] B9: restart instance stable -- rc=None
+[PASS] B10: restart stderr has no Traceback -- 90+360) on QWidgetWindow/"DashboardWidgetClassWindow" on "SNG007DA3-1". Resulting geometry: 1200x1520+801+405 (frame: 1222x1576+790+360) margins: 11, 45, 11, 11 minimum size: 648x997 MINMAXINFO(maxSize=POINT(x=0, y=0), maxpos=POINT(x=0, y=0), maxtrack=POINT(x=0, y=0), mintrack=POINT(x=994, y=1552)))
+[PASS] B11: restart instance terminated cleanly -- rc=1
+[PASS] B12: no orphan MAMBA windows
+
+=== PART A: in-process functional acceptance ===
+[PASS] A1: MambaApp initializes without crash
+[PASS] A2: dashboard window visible on desktop -- hwnd=[36441076]
+[PASS] A3: UI screenshot captured for report -- C:\Users\VahagnPapikyan\Desktop\MAMBA AI\acceptance_ui.png
+[PASS] A4: all capability controllers loaded -- missing=[]
+[PASS] A5: tool router and task executor wired
+[PASS] A6: typed input produces a MAMBA response in conversation -- You: hello mamba
+MAMBA: (No GEMINI_API_KEY configured - local mode.) I recorded your message. I remember 31 message(s) this session; last: 'hello mamba'. Set GEMINI_API_KEY for full AI chat.
+[PASS] A7: statement recorded ('Noted' reply) -- 
+You: My favorite color is teal
+MAMBA: Noted - your favorite color is teal.
+[PASS] A8: context recalled across turns (answer contains teal) -- 
+You: What is my favorite color?
+MAMBA: You told me your favorite color is teal.
+[PASS] A9: short-term recall of previous message -- 
+You: what did I just say
+MAMBA: Your previous message was: 'What is my favorite color?'
+[PASS] A10: open app (notepad) executed and verified -- reply='\nYou: open notepad\nMAMBA: OK - open_application: Open application notepad' windows=[10424350]
+[PASS] A11: mouse moved to requested coordinates -- reply='\nYou: move mouse to 640, 400\nMAMBA: OK - mouse_move: Move mouse to (640,400)' actual=(640,400)
+[PASS] A12: keyboard typing entered text into focused field -- reply='\nYou: type QZ9\nMAMBA: OK - keyboard_type: Type text' field='QZ9' qt=False click=False alt=True os_fg=36441076:'MAMBA - Personal AI Assistant'
+[PASS] A13: screenshot taken via UI command -- reply='\nYou: take a screenshot\nMAMBA: OK - screenshot: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\screenshots\\screenshot_1790710880326.png; bytes: 4'
+[PASS] A14: screen read (vision) returns real analysis -- reply="\nYou: read screen\nMAMBA: OK - screenshot: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\screenshots\\screenshot_1790710880685.png; analysis: {'success': True, 'path': 'C:\\\\Users\\\\VahagnPapikyan\\\\Desktop\\\\MAMBA AI\\\\data\\\\screenshots\\\\screenshot_1790710880685.png', 'pixels': {'success': True, 'si"
+[PASS] A15: OCR layer reports honestly (tesseract not installed) -- 
+You: read screen
+MAMBA: OK - screenshot: path: C:\Users\VahagnPapikyan\Desktop\MAMBA AI\data\screenshots\screenshot_1790710880685.png; analysis: {'success': True, 'path': 'C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\screenshots\\screenshot_1790710880685.png', 'pixels': {'success': True, 'si
+[PASS] A16: file created with verified content -- reply='\nYou: create file data/acceptance_note.txt with hello acceptance\nMAMBA: OK - create_file: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\acceptan'
+[PASS] A17: file read returns real content -- 
+You: read file data/acceptance_note.txt
+MAMBA: OK - read_file: path: C:\Users\VahagnPapikyan\Desktop\MAMBA AI\data\acceptance_note.txt; content: hello acceptance; bytes: 16
+[PASS] A18: file edit verified on disk -- reply='\nYou: edit file data/acceptance_note.txt replacing hello with goodbye\nMAMBA: OK - edit_file: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\accep'
+[PASS] A19: file append verified on disk -- reply='\nYou: append and done to file data/acceptance_note.txt\nMAMBA: OK - edit_file: path: C:\\Users\\VahagnPapikyan\\Desktop\\MAMBA AI\\data\\acceptance_note.txt'
+[PASS] A20: directory listing shows created file -- 
+You: list files in data
+MAMBA: OK - list_files: path: C:\Users\VahagnPapikyan\Desktop\MAMBA AI\data; count: 5; entries: [{'name': 'acceptance_note.txt', 'dir': False, 'size': 26}, {'name': 'auto_step.txt', 'dir': False, 'size': 18}, {'name': 'calc.p
+[PASS] A21: destructive delete gated (refused without confirmation) -- error='Action requires explicit user confirmation (CONFIRM level); not executed autonomously'
+[PASS] A22: terminal returns real command output -- 
+You: run echo acceptance-terminal-ok
+MAMBA: OK - terminal_execute_safe: command: echo acceptance-terminal-ok; stdout: acceptance-terminal-ok ; returncode: 0
+[PASS] A23: dangerous command refused by blocklist -- 
+You: run del /f /q data\acceptance_note.txt
+MAMBA: FAILED - terminal_execute_safe: Dangerous command refused (requires explicit user confirmation); command: del /f /q data\acceptance_note.txt; blocked: True
+[PASS] A24: live web search returns results -- 
+You: search the web for python programming language
+MAMBA: OK - web_search: results: [{'title': 'Welcome to Python.org', 'url': 'https://www.python.org/', 'snippet': 'Python is a versatile and easy-to-learn language that lets you work quickly and integrate systems more effectively. Learn more about
+[PASS] A25: coding task - broken file created -- 
+You: create file data/calc.py with def add(a b):\n return a + b\nprint("result", add(2, 3))
+MAMBA: OK - create_file: path: C:\Users\VahagnPapikyan\Desktop\MAMBA AI\data\calc.py; bytes: 59
+[PASS] A26: broken code run fails and error is detected -- 
+You: run python data/calc.py
+MAMBA: FAILED - terminal_execute_safe: command failed; command: python data/calc.py; stderr: File "C:\Users\VahagnPapikyan\Desktop\MAMBA AI\data\calc.py", line 1 def add(a b): ^ SyntaxError: invalid syntax ; returncode: 1; failure_markers: ['syntaxerror', 'error:']
+[PASS] A27: code repaired -- 
+You: edit file data/calc.py replacing a b with a, b
+MAMBA: OK - edit_file: path: C:\Users\VahagnPapikyan\Desktop\MAMBA AI\data\calc.py
+[PASS] A28: repaired code runs successfully with real output -- 
+You: run python data/calc.py
+MAMBA: OK - terminal_execute_safe: command: python data/calc.py; stdout: result 5 ; returncode: 0
+[PASS] A29: test suite runs through terminal and passes -- 
+You: run python -m pytest tests/test_core_security_unit.py -q
+MAMBA: OK - terminal_execute_safe: command: python -m pytest tests/test_core_security_unit.py -q; stdout: .......... [100%] 10 passed in 0.04s ; returncode: 0
+[PASS] A30: autonomous multi-step task completed (2 steps) -- 
+You: create file data/auto_step.txt with autonomous content; then list files in data
+Step 1 (completed): Create file data/auto_step.txt
+Step 2 (completed): List files in data
+MAMBA: Task 'create file data/auto_step.txt with autonomous content; then' completed: 2/2 steps completed.
+[PASS] A31: generic autonomous pipeline (understand-inspect-plan-act-verify-report) -- status=completed steps=['Understand the goal', 'Inspect relevant context', 'Plan the approach', 'Execute the actions', 'Verify the result', 'Report the outcome']
+[PASS] A32: emergency stop blocks all execution -- 
+You: take a screenshot
+MAMBA: FAILED - screenshot: Blocked by security manager (emergency stop or access revoked)
+[PASS] A33: operations recover after stop is cleared -- 
+You: take a screenshot
+MAMBA: OK - screenshot: path: C:\Users\VahagnPapikyan\Desktop\MAMBA AI\data\screenshots\screenshot_1790710887979.png; bytes: 497118
+[PASS] A34: access revocation blocks actions -- 
+You: open notepad
+MAMBA: FAILED - open_application: Blocked by security manager (emergency stop or access revoked)
+[PASS] A35: access restored and actions allowed again -- 
+You: take a screenshot
+MAMBA: OK - screenshot: path: C:\Users\VahagnPapikyan\Desktop\MAMBA AI\data\screenshots\screenshot_1790710888538.png; bytes: 497265
+[PASS] A36: phone provider is mock (no real call/text possible) -- MockPhoneProvider
+[PASS] A37: phone phrases parsed / non-phone phrase rejected -- call=call, text_msg=Hello There, neg=None
+[PASS] A38: message casing preserved in parsed text command -- message='Hello There'
+[PASS] A39: phone call through UI used mock provider (no real call) -- 
+You: call me
+MAMBA: Phone call -> 05***85 via mock provider
+[PASS] A40: .env carries DEFAULT_PHONE_NUMBER and CALLER_ID
+[PASS] A41: PhoneManager loaded caller ID and default number -- caller_id='MAMBA AI' default='055190685'
+[PASS] A42: close app (notepad) executed and verified gone -- 
+You: close notepad
+MAMBA: OK - close_application: Close application notepad
+[PASS] A43: memory growth sane (no leak) -- growth=149.5 MB (start=58 MB, end=208 MB)
+[PASS] A44: thread count sane -- 7 -> 16
+[PASS] A45: conversation log contains the full session -- 5308 chars
+[PASS] A46: window still responsive after all tests -- visible
+[PASS] A47: AI provider status reported honestly -- ai_provider=False (GEMINI_API_KEY set: False)
+
+=== SUMMARY ===
+required: 56/56 passed
+optional/info: 3/3 ok
+report written: C:\Users\VahagnPapikyan\Desktop\MAMBA AI\acceptance_report.json
